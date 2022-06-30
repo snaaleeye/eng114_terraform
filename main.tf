@@ -15,7 +15,7 @@ resource "aws_instance" "app_instance" {
 #size of the server t2-micro
   ami = "ami-0b47105e3d7fc023e"
   instance_type = "t2.micro"
-  key_name= "eng114_sharmake.pem"
+  key_name= "eng114_sharmake"
 # do we need it to have a public access
   associate_public_ip_address = true
 
@@ -25,4 +25,6 @@ resource "aws_instance" "app_instance" {
       Name = "eng114_sharmake_terraform_app"
  }
 }
+
+
 
