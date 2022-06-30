@@ -32,15 +32,17 @@ https://www.ibm.com/cloud/learn/terraform#:~:text=Terraform%20is%20an%20open%20s
 
 **1. Improve multi-cloud infrastructure deployment**
 
-Terraform applies to multi-cloud scenarios, where similar infrastructure is deployed on cloud providers, or local data centers. Developers can use the same tool and configuration file to simultaneously manage the resources of different cloud providers.
+- Terraform applies to multi-cloud scenarios, where similar infrastructure is deployed on cloud providers, or local data centers. Developers can use the same tool and configuration file to simultaneously manage the resources of different cloud providers.
 
 **2. Automated infrastructure management**
 
-Terraform can create configuration file templates to define, provision, and configure ECS resources in a repeatable and predictable manner, reducing deployment and management errors resulting from human intervention. In addition, Terraform can deploy the same template multiple times to create the same development, test, and production environment.
+- Terraform can create configuration file templates to define, provision, and configure ECS resources in a repeatable and predictable manner, reducing deployment and management errors resulting from human intervention. 
+- In addition, Terraform can deploy the same template multiple times to create the same development, test, and production environment.
 
 **3. Infrastructure as code**
 
-With Terraform, you can use code to manage and maintain resources. It allows you to store the infrastructure status, so that you can track the changes in different components of the system (infrastructure as code) and share these configurations with others.
+- With Terraform, you can use code to manage and maintain resources. 
+- It allows you to store the infrastructure status, so that you can track the changes in different components of the system (infrastructure as code) and share these configurations with others.
 
 **4. Reduced development costs**
 
