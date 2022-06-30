@@ -72,4 +72,66 @@ https://www.alibabacloud.com/blog/five-reasons-why-your-business-should-use-terr
 
 Terraform is an open source “Infrastructure as Code” tool, created by HashiCorp.
 
+## Launch a server on AWS using Terraform
+
+Step 1: Install/Set up Terraform 
+
+Step 2: Set up environment variables 
+
+AWS_ACCESS_KEY_ID= 123
+AWS_SECRET_ACCESS_KEY= abc
+
+Step 3: Create a new directory called terraform and create main.tf to launch an instance. 
+
+
+```
+
+# launch a server on aws
+
+# who is the cloud provider AWS
+provider "aws" {
+
+# where do you ant to create resources eu-west-1
+  region = "eu-west-1"
+
+}
+
+# what type of server - ubuntu 18.04 LTS ami
+resource "aws_instance" "app_instance" {
+
+
+#size of the server t2-micro
+  ami = "ami-0b47105e3d7fc023e"
+  instance_type = "t2.micro"
+  key_name= "eng114_sharmake"
+# do we need it to have a public access
+  associate_public_ip_address = true
+
+
+# what do we want to name it
+  tags = {
+      Name = "eng114_sharmake_terraform_app"
+ }
+}
+
+
+```
+
+Step 4: Run Terraform commands
+
+`terraform init` - Initialises 
+
+`terraform plan` -  lets you preview the changes that Terraform plans to make to your infrastructure.
+
+`terraform apply` - executes the actions proposed in a Terraform plan.
+
+`terraform destroy` - destroys all remote objects managed by a particular Terraform configuration.
+
+
+
+
+
+
+
+
 
