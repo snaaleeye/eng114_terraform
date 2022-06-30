@@ -1,11 +1,60 @@
-hello world!
+## What is Terraform?
 
-What is Terraform?
+Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. 
 
-Why should we use Terraform?
+You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
 
-What are the benefits of Terraform?
+## Why should we use Terraform?
 
-Who owns Terraform?
+**1. Open source
+**
+Terraform is backed by large communities of contributors who build plugins to the platform. Regardless of which cloud provider you use, it’s easy to find plugins, extensions, and professional support. This also means Terraform evolves quickly, with new benefits and improvements added consistently.
 
-HashiCorp
+**2. Platform agnostic: **
+
+Meaning you can use it with any cloud services provider. Most other IaC tools are designed to work with single cloud provider.
+
+**3. Immutable infrastructure: **
+
+Most Infrastructure as Code tools create mutable infrastructure, meaning the infrastructure can change to accommodate changes such as a middleware upgrade or new storage server. The danger with mutable infrastructure is configuration drift—as the changes pile up, the actual provisioning of different servers or other infrastructure elements ‘drifts’ further from the original configuration, making bugs or performance issues difficult to diagnose and correct. Terraform provisions immutable infrastructure, which means that with each change to the environment, the current configuration is replaced with a new one that accounts for the change, and the infrastructure is reprovisioned. Even better, previous configurations can be retained as versions to enable rollbacks if necessary or desired.
+
+https://www.ibm.com/cloud/learn/terraform#:~:text=Terraform%20is%20an%20open%20source,%E2%80%9D%20tool%2C%20created%20by%20HashiCorp.
+
+## What are the benefits of using Terraform?
+
+**1. Improve multi-cloud infrastructure deployment
+**
+Terraform applies to multi-cloud scenarios, where similar infrastructure is deployed on cloud providers, or local data centers. Developers can use the same tool and configuration file to simultaneously manage the resources of different cloud providers.
+
+**2. Automated infrastructure management
+**
+Terraform can create configuration file templates to define, provision, and configure ECS resources in a repeatable and predictable manner, reducing deployment and management errors resulting from human intervention. In addition, Terraform can deploy the same template multiple times to create the same development, test, and production environment.
+
+**3. Infrastructure as code
+**
+With Terraform, you can use code to manage and maintain resources. It allows you to store the infrastructure status, so that you can track the changes in different components of the system (infrastructure as code) and share these configurations with others.
+
+**4. Reduced development costs
+**
+You can reduce costs by creating on-demand development and deployment environments. In addition, you can evaluate such environments before making system changes.
+
+**5. Reduced time to provision
+**
+Traditional click-ops methods of deployment used by organizations can take days or even weeks, in addition to being error-prone. With Terraform, full deployment can take just minutes. For example, you can provision multiple Alibaba Cloud services at a time in a standardized way. Both brand new deployments and migrations can be done quickly and efficiently.
+
+**Uses cases for Terraform**
+
+You need to automate the orchestration of a large number of resources.
+You have developer resources to support the development of Terraform code.
+You need to scale up and down the infrastructure according to variable online workloads.
+You need to deploy a large system that involves a complex topology.
+You need to apply repeated, clearly defined procedures on cloud resources.
+You need to perform orchestration on a large heterogeneous system that involves multi-cloud and hybrid cloud platforms.
+
+https://www.alibabacloud.com/blog/five-reasons-why-your-business-should-use-terraform-to-deploy-on-the-cloud_596342
+
+## Who owns Terraform?
+
+Terraform is an open source “Infrastructure as Code” tool, created by HashiCorp.
+
+
