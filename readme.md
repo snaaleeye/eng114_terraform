@@ -1,3 +1,5 @@
+![terraform_pic](https://user-images.githubusercontent.com/105854053/176681612-fad1abd6-8066-44b6-b510-13fbf335f367.png)
+
 ## What is Terraform?
 
 Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. 
