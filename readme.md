@@ -8,15 +8,15 @@ You can then use a consistent workflow to provision and manage all of your infra
 
 ## Why should we use Terraform?
 
-**1. Open source **
+1. Open source
 
 Terraform is backed by large communities of contributors who build plugins to the platform. Regardless of which cloud provider you use, it’s easy to find plugins, extensions, and professional support. This also means Terraform evolves quickly, with new benefits and improvements added consistently.
 
-**2. Platform agnostic: **
+2. Platform agnostic 
 
 Meaning you can use it with any cloud services provider. Most other IaC tools are designed to work with single cloud provider.
 
-**3. Immutable infrastructure: **
+3. Immutable infrastructure
 
 Most Infrastructure as Code tools create mutable infrastructure, meaning the infrastructure can change to accommodate changes such as a middleware upgrade or new storage server. The danger with mutable infrastructure is configuration drift—as the changes pile up, the actual provisioning of different servers or other infrastructure elements ‘drifts’ further from the original configuration, making bugs or performance issues difficult to diagnose and correct. Terraform provisions immutable infrastructure, which means that with each change to the environment, the current configuration is replaced with a new one that accounts for the change, and the infrastructure is reprovisioned. Even better, previous configurations can be retained as versions to enable rollbacks if necessary or desired.
 
