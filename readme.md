@@ -76,7 +76,7 @@ Terraform is an open source “Infrastructure as Code” tool, created by HashiC
 
 Step 1: Install/Set up Terraform 
 
-Step 2: Set up environment variables 
+Step 2: Set up environment variables in user variables
 
 AWS_ACCESS_KEY_ID= 123
 AWS_SECRET_ACCESS_KEY= abc
