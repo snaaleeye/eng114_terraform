@@ -49,9 +49,13 @@ Traditional click-ops methods of deployment used by organizations can take days 
 a) You need to automate the orchestration of a large number of resources.
 
 b) You have developer resources to support the development of Terraform code.
+
 c) You need to scale up and down the infrastructure according to variable online workloads.
+
 d) You need to deploy a large system that involves a complex topology.
+
 e) You need to apply repeated, clearly defined procedures on cloud resources.
+
 f) You need to perform orchestration on a large heterogeneous system that involves multi-cloud and hybrid cloud platforms.
 
 https://www.alibabacloud.com/blog/five-reasons-why-your-business-should-use-terraform-to-deploy-on-the-cloud_596342
