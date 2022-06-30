@@ -128,6 +128,8 @@ Step 4: Run Terraform commands
 `terraform destroy` - destroys all remote objects managed by a particular Terraform configuration.
 
 
+## Create VPC, subnets (public and private) and security groups
+
 
 
 
