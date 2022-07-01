@@ -131,8 +131,126 @@ Step 4: Run Terraform commands
 ## Create VPC, subnets (public and private) and security groups
 
 
+```
+# launch a server on ec2
+
+# who is the cloud provider
+provider "aws"{
+
+# where do you want to create the resources (eu-west-1)
+  region = "eu-west-1"
+}
 
 
+# Create VPC
+resource "aws_vpc" "eng114_sharmake_terraform" {
+  cidr_block = "10.47.0.0/16" 
+  instance_tenancy = "default"
+
+ 
+  tags = {
+    Name = "eng114_sharmake_terraform_vpc"
+  }
+}
+
+# Create Internet Gateway
+resource "aws_internet_gateway" "eng114_sharmake_terraform_ig" {
+  vpc_id = aws_vpc.eng114_sharmake_terraform.id
+  tags = {
+    Name = "eng114_sharmake_terraform-ig"
+  }
+}
+
+# Create Public Subnet (for app)
+resource "aws_subnet" "eng114_sharmake_terraform_public_subnet" {
+  vpc_id = aws_vpc.eng114_sharmake_terraform.id
+  cidr_block = "10.47.1.0/24"
+  map_public_ip_on_launch = true
+  availability_zone = "eu-west-1b"
+  
+  tags = {
+    Name = "eng114_sharmake_terraform_public_subnet"
+  }
+}
+
+# Create Private Subnet (for db)
+resource "aws_subnet" "eng114_sharmake_terraform_private_subnet" {
+  vpc_id = aws_vpc.eng114_sharmake_terraform.id
+  cidr_block = "10.47.10.0/24"
+  map_public_ip_on_launch = true
+  availability_zone = "eu-west-1b"
+  
+  tags = {
+    Name = "eng114_sharmake_terraform_private_subnet"
+  }
+}
+
+# Route table (public)
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.eng114_sharmake_terraform.id
+
+  tags = {
+    Name = "eng114_sharmake_terraform_public_RT"
+  }
+}
+
+# Route from (public)
+resource "aws_route" "eng114_sharmake_terraform_public_internet_gateway" {
+  route_table_id         = aws_route_table.public.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_internet_gateway.eng114_sharmake_terraform_ig.id
+}
+
+
+# Subnet assosiations (public)
+resource "aws_route_table_association" "public" {
+  subnet_id      = aws_subnet.eng114_sharmake_terraform_public_subnet.id
+  route_table_id = aws_route_table.public.id
+}
+
+resource "aws_security_group" "allow_nginx" {
+  name = "allow_nginx"
+  description = "Allow port 80"
+  vpc_id = aws_vpc.eng114_sharmake_terraform.id
+
+  ingress {
+    from_port = 80
+    protocol  = "tcp"
+    to_port   = 80
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port = 0
+    protocol  = "-1"
+    to_port   = 0
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "allow_nginx"
+  }
+}
+
+# Create 
+resource "aws_instance" "app_instance" {
+  ami = "ami-0b47105e3d7fc023e"
+  instance_type = "t2.micro"
+  key_name = "eng114_sharmake"
+
+  subnet_id = aws_subnet.eng114_sharmake_terraform_public_subnet.id
+
+# do we need it to have public access
+
+ associate_public_ip_address = true
+
+# what do we want to name it
+ tags = {
+    Name = "eng114_sharmake_terraform_app"
+ }
+}
+
+```
 
 
 
